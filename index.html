@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Calculator</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="calc">
+			<div class="calc__result result">
+				<div class="result__window"></div>
+			</div>
+			<div class="calc__menu">
+				<div data-action="reset" class="calc__btn calc__btn_2width calc__btn_lightgrey btn__reset">C</div>
+				<div data-action="removeSymbol" class="calc__btn btn__backspace">
+					<img src="img/icons/backspace.svg" alt="Стереть">
+				</div>
+				<div data-action="handleOperator" data-operator-type="DIV" class="calc__btn calc__btn_blue btn__div">
+					<img src="img/icons/div.svg" alt="Разделить">
+				</div>
+				<div data-action="handleNumber" class="calc__btn btn__num">7</div>
+				<div data-action="handleNumber" class="calc__btn btn__num">8</div>
+				<div data-action="handleNumber" class="calc__btn btn__num">9</div>
+				<div data-action="handleOperator" data-operator-type="MULT" class="calc__btn calc__btn_blue btn__mult">
+					<img src="img/icons/mult.svg" alt="Умножить">
+				</div>
+				<div data-action="handleNumber" class="calc__btn btn__num">4</div>
+				<div data-action="handleNumber" class="calc__btn btn__num">5</div>
+				<div data-action="handleNumber" class="calc__btn btn__num">6</div>
+				<div data-action="handleOperator" data-operator-type="MINUS" class="calc__btn calc__btn_blue btn__minus">
+					-
+				</div>
+				<div data-action="handleNumber" class="calc__btn btn__num">1</div>
+				<div data-action="handleNumber" class="calc__btn btn__num">2</div>
+				<div data-action="handleNumber" class="calc__btn btn__num">3</div>
+				<div data-action="handleOperator" data-operator-type="PLUS" class="calc__btn calc__btn_blue btn__plus">
+					+
+				</div>
+				<div data-action="handleNumber" class="calc__btn calc__btn_2width btn__num">0</div>
+				<div data-action="handleNumber" class="calc__btn btn__point">.</div>
+				<div data-action="equal" class="calc__btn calc__btn_blue btn__equal">=</div>
+			</div>
+		</div>
+		<script type="module" src="js/main.js"></script>
+	</body>
+</html>
