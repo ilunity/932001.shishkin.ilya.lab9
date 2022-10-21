@@ -103,7 +103,7 @@ export class Calculator {
   }
 
   removeSymbol() {
-    if (this.isSomeSymbolExist()) return;
+    if (!this.isSomeSymbolExist()) return;
     this.#resultWindow.pop();
 
     if (this.isLastSymbolIsOperator()) {
@@ -148,6 +148,6 @@ export class Calculator {
   }
 
   isSomeSymbolExist() {
-    return this.isCurrentNumberExist();
+    return this.isCurrentNumberExist() || this.isOperatorExist();
   }
 }
