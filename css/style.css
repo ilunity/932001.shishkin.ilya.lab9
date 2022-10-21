@@ -63,10 +63,27 @@
   margin: 0 auto 16px;
 }
 .result__window {
+  height: 100%;
   text-align: right;
   font-size: 96px;
   font-weight: 300;
   color: #fff;
+  overflow-y: hidden;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #4B5EFC #2E2F38;
+}
+.result__window::-webkit-scrollbar {
+  width: 4px;
+}
+.result__window::-webkit-scrollbar-track {
+  background: #2E2F38;
+  border-radius: 8px;
+}
+.result__window::-webkit-scrollbar-thumb {
+  background-color: #4B5EFC;
+  border-radius: 8px;
+  border: 1px solid #2E2F38;
 }
 .result_disabled {
   color: #2E2F38;
