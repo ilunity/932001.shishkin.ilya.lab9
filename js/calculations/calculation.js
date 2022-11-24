@@ -1,10 +1,10 @@
 import { CALCULATION_ERROR_MESSAGES, CalculationError } from './calculation-error.js';
 
 export const OPERATOR_TYPES = {
-  PLUS: 'plus',
-  MINUS: 'minus',
-  MULT: 'multiply',
-  DIV: 'divide',
+  PLUS: 'PLUS',
+  MINUS: 'MINUS',
+  MULT: 'MULT',
+  DIV: 'DIV',
 };
 
 export class Calculation {

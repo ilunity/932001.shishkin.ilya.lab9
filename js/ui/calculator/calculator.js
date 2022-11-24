@@ -91,8 +91,23 @@ export class Calculator {
   handleOperator( target ) {
     const operatorType = target.dataset.operatorType;
 
+    const isFirstNumberEmpty = !this.isCurrentNumberExist() && !this.isOperatorExist();
+    if (isFirstNumberEmpty) {
+      if (operatorType === OPERATOR_TYPES.MINUS) {
+        return this.changeCurrentSign();
+      }
+    }
+
     if (this.isOperatorExist()) {
-      if (!this.isCurrentNumberExist()) {
+      const isSecondNumberEmpty = !this.isCurrentNumberExist();
+
+      if (isSecondNumberEmpty) {
+        const isUnaryMinusSituation = operatorType === OPERATOR_TYPES.MINUS && (this.#operatorType === OPERATOR_TYPES.MULT || this.#operatorType === OPERATOR_TYPES.DIV);
+
+        if (isUnaryMinusSituation) {
+          return this.changeCurrentSign();
+        }
+
         return this.#replaceOperator(operatorType);
       }
 
@@ -131,6 +146,11 @@ export class Calculator {
     this.#setResult(result);
   }
 
+  changeCurrentSign() {
+    this.#currentNumber.append('-');
+    this.#resultWindow.append('-');
+  }
+
   isCurrentNumberExist() {
     return !this.#currentNumber.isEmpty();
   }
@@ -140,7 +160,7 @@ export class Calculator {
   }
 
   isLastSymbolIsOperator() {
-    return this.isCurrentNumberExist() && !this.isOperatorExist();
+    return !this.isCurrentNumberExist() && this.isOperatorExist();
   }
 
   isFirstNumberExist() {

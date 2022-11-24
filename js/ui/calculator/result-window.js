@@ -16,6 +16,7 @@ export class ResultWindow {
 
   set value( value ) {
     this.#element.textContent = value;
+    this.#resize();
   }
 
   append( symbol ) {
